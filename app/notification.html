@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notifications</title>
+    <style>
+      :root {
+        --dark-red: #6d2323;
+        --bright-red: #a31d1d;
+        --soft-beige: #e5d0ac;
+        --light-cream: #fef9e1;
+        --white: #ffffff;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-cream);
+        color: var(--dark-red);
+      }
+
+      .notifications-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .page-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: var(--bright-red);
+        margin-bottom: 2rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .notif-card {
+        background-color: var(--soft-beige);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .notif-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .notif-card h3 {
+        color: var(--bright-red);
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .notif-content {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .form-group {
+        margin-top: 1rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.3rem;
+        font-weight: bold;
+      }
+
+      input[type="time"],
+      input[type="number"] {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--dark-red);
+      }
+
+      button {
+        margin-top: 0.5rem;
+        background-color: var(--bright-red);
+        color: var(--white);
+        padding: 0.6rem 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      button:hover {
+        background-color: var(--dark-red);
+      }
+
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="notifications-wrapper">
+      <h1 class="page-title">📣 Notifications & Reminders</h1>
+
+      <div class="grid">
+        <!-- Meal Reminder -->
+        <div class="notif-card">
+          <h3>🍽️ Meal Reminders</h3>
+          <div class="notif-content">
+            - Breakfast at 8:00 AM<br />
+            - Lunch at 1:00 PM <br />
+            - Dinner at 7:00 PM
+          </div>
+          <div class="form-group">
+            <label for="meal-time">Set Meal Reminder</label>
+            <input type="time" id="meal-time" />
+            <button>Save</button>
+          </div>
+        </div>
+
+        <!-- Water Reminder -->
+        <div class="notif-card">
+          <h3>💧 Hydration Alerts</h3>
+          <div class="notif-content">- Reminder: Drink water every 2 hours</div>
+          <div class="form-group">
+            <label for="water-interval">Interval (hours)</label>
+            <input type="number" id="water-interval" placeholder="e.g. 2" />
+            <button>Set Reminder</button>
+          </div>
+        </div>
+
+        <!-- Exercise Reminder -->
+        <div class="notif-card">
+          <h3>🏋️ Workout Reminders</h3>
+          <div class="notif-content">
+            - 30 min Cardio today<br />
+            - Stretch at 5:00 PM
+          </div>
+          <button>Set Workout Time</button>
+        </div>
+
+        <!-- Sleep Reminder -->
+        <div class="notif-card">
+          <h3>🛌 Sleep Schedule</h3>
+          <div class="notif-content">
+            - Bedtime reminder at 10:00 PM<br />
+            - Target: 8 hours of sleep
+          </div>
+          <button>Set Sleep Time</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

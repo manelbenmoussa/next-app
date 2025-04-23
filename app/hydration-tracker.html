@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hydration Tracker</title>
+    <style>
+      /* Reuse your styles from the previous page */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #fef9e1;
+        color: #6d2323;
+      }
+      .container {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: #e5d0ac;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 0.8rem;
+        margin-top: 0.5rem;
+        border: 1px solid #6d2323;
+        border-radius: 0.5rem;
+      }
+      button {
+        padding: 1rem;
+        background-color: #a31d1d;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #6d2323;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Track Water Intake</h1>
+      <div class="form-group">
+        <label for="water-intake">Amount of Water (ml)</label>
+        <input
+          type="number"
+          id="water-intake"
+          placeholder="Enter amount in milliliters"
+        />
+      </div>
+      <button>Log Water</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --dark-red: #6d2323;
+        --bright-red: #a31d1d;
+        --soft-beige: #e5d0ac;
+        --light-cream: #fef9e1;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-cream);
+        color: var(--dark-red);
+      }
+
+      /* Wrapper */
+      .budget-wrapper {
+        min-height: 100vh;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        gap: 2rem; /* ajoute un espace uniforme entre tous les enfants */
+      }
+
+      /* Title */
+      .budget-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--bright-red);
+      }
+
+      /* Description */
+      .budget-description {
+        max-width: 600px;
+        font-size: 1.2rem;
+      }
+
+      /* Summary Cards */
+      .summary-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+        max-width: 700px;
+      }
+
+      @media (min-width: 640px) {
+        .summary-cards {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+
+      .card {
+        background-color: var(--soft-beige);
+        border: 2px solid var(--dark-red);
+        padding: 1rem;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .card h3 {
+        color: var(--bright-red);
+        margin-bottom: 0.5rem;
+      }
+
+      .card p {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      /* Budget Form */
+      .budget-form {
+        background-color: var(--soft-beige);
+        border: 2px solid var(--dark-red);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        max-width: 600px;
+        width: 100%;
+      }
+
+      .budget-form input,
+      .budget-form select,
+      .budget-form button {
+        width: 100%;
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        border: 1px solid var(--dark-red);
+        border-radius: 0.5rem;
+      }
+
+      .budget-form button {
+        background-color: var(--bright-red);
+        color: white;
+        font-weight: bold;
+        border: none;
+        transition: background 0.3s ease;
+        cursor: pointer;
+      }
+
+      .budget-form button:hover {
+        background-color: var(--dark-red);
+      }
+
+      /* Transaction List */
+      .transaction-list {
+        background-color: var(--soft-beige);
+        border: 2px solid var(--dark-red);
+        border-radius: 1rem;
+        padding: 1rem;
+        max-width: 600px;
+        width: 100%;
+      }
+
+      .transaction-list h2 {
+        margin-bottom: 1rem;
+        color: var(--bright-red);
+      }
+
+      .transaction {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--dark-red);
+        padding: 0.5rem 0;
+      }
+
+      .transaction:last-child {
+        border-bottom: none;
+      }
+
+      .income {
+        color: green;
+        font-weight: bold;
+      }
+
+      .expense {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="budget-tracker-container">
+      <div class="budget-wrapper">
+        <h1 class="page-title">💰 Budget Tracker</h1>
+        <p class="page-description">
+          Track your income and expenses to stay on top of your student budget.
+        </p>
+
+        <div class="summary-cards">
+          <div class="summary-card income">
+            <h2>Total Income</h2>
+            <p>$1200</p>
+          </div>
+          <div class="summary-card expenses">
+            <h2>Total Expenses</h2>
+            <p>$650</p>
+          </div>
+          <div class="summary-card balance">
+            <h2>Balance</h2>
+            <p>$550</p>
+          </div>
+        </div>
+
+        <form class="transaction-form">
+          <h2>Add Transaction</h2>
+          <input type="text" placeholder="Title (e.g. Rent, Books)" required />
+          <input type="number" placeholder="Amount (e.g. 100)" required />
+          <select>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <button type="submit">Add</button>
+        </form>
+
+        <div class="transaction-list"></div>
+        <h2>Transaction History</h2>
+        <ul>
+          <li class="transaction-item income">📥 Scholarship +$500</li>
+          <li class="transaction-item expense">🍕 Food -$50</li>
+          <li class="transaction-item expense">📚 Books -$100</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

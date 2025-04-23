@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrition & Fitness</title>
+    <style>
+      :root {
+        --dark-red: #6d2323;
+        --bright-red: #a31d1d;
+        --soft-beige: #e5d0ac;
+        --light-cream: #fef9e1;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-cream);
+        color: var(--dark-red);
+      }
+
+      .fitness-wrapper {
+        min-height: 100vh;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .fitness-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--bright-red);
+      }
+
+      .fitness-description {
+        max-width: 600px;
+        font-size: 1.2rem;
+      }
+
+      .fitness-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      @media (min-width: 640px) {
+        .fitness-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .card {
+        background-color: var(--soft-beige);
+        border: 2px solid var(--dark-red);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .card:hover {
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .card h3 {
+        color: var(--bright-red);
+        margin-bottom: 0.5rem;
+      }
+
+      .card p {
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fitness-wrapper">
+      <h1 class="fitness-title">Nutrition & Fitness</h1>
+      <p class="fitness-description">
+        Track your meals, exercises, and healthy habits all in one place!
+      </p>
+
+      <div class="fitness-grid">
+        <!-- Meal Planner Block -->
+        <a href="meal-planner.html" class="card">
+          <h3>🍎 Meal Planner</h3>
+          <p>
+            Plan your daily meals and log your calories and nutrition values.
+          </p>
+        </a>
+
+        <!-- Food Database Block -->
+        <a href="food-database.html" class="card">
+          <h3>🍴 Food Database</h3>
+          <p>Search and explore nutritional information for various foods.</p>
+        </a>
+
+        <!-- Hydration Tracker Block -->
+        <a href="hydration-tracker.html" class="card">
+          <h3>💧 Hydration Tracker</h3>
+          <p>Track your daily water intake and monitor hydration goals.</p>
+        </a>
+
+        <!-- Nutrition Tips & Articles Block -->
+        <a href="nutrition-tips.html" class="card">
+          <h3>📚 Nutrition Tips</h3>
+          <p>Read daily nutrition tips and articles to stay healthy.</p>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

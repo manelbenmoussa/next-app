@@ -1,0 +1,152 @@
+/* Color Palette */
+:root {
+  --dark-red: #6d2323;
+  --bright-red: #a31d1d;
+  --soft-beige: #e5d0ac;
+  --light-cream: #fef9e1;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-cream);
+  color: var(--dark-red);
+}
+
+/* Main Section */
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--bright-red);
+  margin-bottom: 1rem;
+  margin-top: 50px;
+}
+
+.description {
+  max-width: 600px;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Cards Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 800px;
+  width: 100%;
+  margin-top: 100px;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background-color: var(--soft-beige);
+  border: 2px solid var(--dark-red);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  color: var(--bright-red);
+  margin-bottom: 0.5rem;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: var(--soft-beige);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--cream);
+}
+
+img {
+  height: 40px;
+  width: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: var(--dark-red);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Login Button Styling */
+.nav-links .login-button {
+  background-color: var(--bright-red);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.nav-links a.login-button:hover {
+  background-color: var(--dark-red);
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--soft-beige);
+  color: var(--dark-red);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+/* Login Button Styling */
+
+.nav-links .login-button:hover {
+  background-color: var(--dark-red);
+  transform: scale(1.05);
+}
